@@ -1,18 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export", // ✅ Add this line for static export
   images: {
-    domains: ['image.tmdb.org', 'media.themoviedb.org'],
+    domains: ["image.tmdb.org", "media.themoviedb.org"],
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true, // 👈 Add this line
+    // Dangerously allow production builds to complete even if there are type errors
+    ignoreBuildErrors: true,
   },
 };
 
